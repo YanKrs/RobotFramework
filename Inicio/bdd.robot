@@ -5,18 +5,18 @@ Library        SeleniumLibrary
 
 ***Variables***
 #Dados do teste
-${nomeDaMusica}     Curso em video python
+${nomeDaMusica}     Taylor Swift Betty
 
 #Variáveis de configuração
 ${url}              https://www.youtube.com/
-${browser}          chrome
+${browser}          chrome 
 
 
 #Elementos
 ${inputSearch}                  //input[@id="search"]
 ${buttonSearch}                 //button[@id="search-icon-legacy"]
 ${firstVideoTitle}              (//a[@id="video-title"])[1]
-${prova}                        (//yt-button-shape[@id="subscribe-button-shape"])[1]             
+${prova}                        (//yt-button-shape[@id="subscribe-button-shape"])[1]            
 
 
 
@@ -27,7 +27,6 @@ ${prova}                        (//yt-button-shape[@id="subscribe-button-shape"]
 Dado que eu acesso o site do youtube
         Open Browser     ${url}     ${browser}  
         Maximize Browser Window 
-        
 
 
 Quando digito o nome da música
@@ -40,7 +39,7 @@ E clico no botão buscar
 
 
 E clico na primeira opção da lista
-        Wait Until Element Is Visible       ${firstVideoTitle}     10
+        Wait Until Element Is Visible       ${firstVideoTitle}     3
         Click Element                       ${firstVideoTitle}
         
 

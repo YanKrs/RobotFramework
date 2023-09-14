@@ -1,15 +1,16 @@
-***Settings***
+**Settings**
 
 Library     SeleniumLibrary
 
 
 
-***Variables***
+**Variables**
 
-${browser}      edge
-${url}          https://cct.techmail.com.br/login
-${usuario}      yan.souza
-${senha}        180921M@
+${browser}              edge
+${url}                  https://cct.techmail.com.br/login
+${linkExportar}         https://cct.techmail.com.br/exportacao
+${usuario}              yan.souza
+${senha}                180921M@
 
 
 #Elementos
@@ -22,7 +23,7 @@ ${exportar}             //a[@href="https://cct.techmail.com.br/exportacao"]
 
 
 
-***Keywords***
+**Keywords**
 Abrir navegador e logar
         Open browser                ${url}                         ${browser}
         Maximize Browser Window
@@ -40,6 +41,6 @@ Abrir navegador e logar
 
 
 
-***Test Cases***
+**Test Cases**
 Cenario 1: Entrar no cct e logar
         Abrir navegador e logar

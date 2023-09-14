@@ -1,4 +1,4 @@
-**Settings    **
+*Settings    *
 
 Library        SeleniumLibrary
 
@@ -20,9 +20,8 @@ ${loginSenha}                   //*[@id="password"]
 
 ${dropDown}                                            //*[@id="s2id_customFilter"]
 ${selecionarTodos}                                     //*[@id="listViewEntriesMainCheckBox"]
-${campoFila}                                           //div[@class='select2-search']/input[@type='text']
-
-
+${campoFila}                                           //*[@id="s2id_customFilter"]/a
+${loop_infinito}    ${True}
 
 
 
@@ -30,7 +29,7 @@ ${campoFila}                                           //div[@class='select2-sea
 
 
 * Keywords *   
-Abrir site e logar
+Abrir site e logar        
         Open Browser     ${linkWf}        ${browser}
         Maximize Browser Window
         Input Text    ${loginUser}    robo
@@ -39,72 +38,34 @@ Abrir site e logar
         
 
 
+Ir para documentos
+        Go To    ${linkDocumentos}        #altera para link de Documentos
 
-        Go To    ${linkDocumentos}
 
+Loop de filas
+    WHILE    ${loop_infinito}    #WHILE para fazer com que repetição seja infinita sem fechar o browser
+        @{filas}    Create List    01    02    04    16.1    16.2    22  #crio lista das filas
+        @{checar}    Create List    
+        FOR    ${fila}    IN    @{filas}         #FOR para percorrer a lista das filas
 
             Wait Until Element Is Visible       ${dropDown}     20            
             Click Element    ${dropDown}
             Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        01     #Fila vigencia        
-            Press Key    ${campoFila}    \\13            
+            Input Text    ${campoFila}        ${fila}     #Insere número da fila         
+            Press Keys    ${campoFila}    \\13    #Dá enter para ir para fila        
             Wait Until Element Is Visible    ${selecionarTodos}
-            Click Element    ${selecionarTodos}
-            Sleep    10s
-
-
-           
-            Click Element    ${dropDown}
-            Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        02
-            Press Key    ${campoFila}    \\13
-            Wait Until Element Is Visible    ${selecionarTodos}
-            Click Element    ${selecionarTodos}
-            Sleep    10s
-
-
-
+            Click Element    ${selecionarTodos}        #Seleciona todos os itens pendentes da fila
+            Sleep    10s        
             
-            Click Element    ${dropDown}
-            Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        04
-            Press Key    ${campoFila}    \\13
-            Wait Until Element Is Visible    ${selecionarTodos}
-            Click Element    ${selecionarTodos}
-            Sleep    10s
+        END
+    END
 
 
 
-           
-            Click Element    ${dropDown}
-            Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        16.1
-            Press Key    ${campoFila}    \\13
-            Wait Until Element Is Visible    ${selecionarTodos}
-            Click Element    ${selecionarTodos}
-            Sleep    10s
 
 
-            
-            Click Element    ${dropDown}
-            Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        16.2
-            Press Key    ${campoFila}    \\13
-            Wait Until Element Is Visible    ${selecionarTodos}
-            Click Element    ${selecionarTodos}
-            Sleep    10s
-
-
-            
-            Click Element    ${dropDown}
-            Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        22
-            Press Key    ${campoFila}    \\13
-            Wait Until Element Is Visible    ${selecionarTodos}
-            Click Element    ${selecionarTodos}
-            Sleep    10s
-
-
-**Test Cases **
+*Test Cases *
 Cenário 1: Abrir plataforma WF, logar e checar filas
         Abrir site e logar
+        Ir para documentos
+        Loop de filas
