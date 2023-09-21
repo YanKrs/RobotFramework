@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230831 11:16:06.584" rpa="false" schemaversion="4">
+<suite id="s1" name="filawFTeste" source="C:\Users\yan.souza\Documents\GitHub\RobotFramework\Inicio\tests\filawFTeste.robot">
+<test id="s1-t1" name="Cenário 1: Abrir plataforma WF, logar e checar filas" line="67">
+<kw name="Abrir site e logar">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${linkWf}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230831 11:16:09.046" level="INFO">Opening browser 'chrome' to base url 'https://wfdocumentos.techmail.com.br/'.</msg>
+<msg timestamp="20230831 11:16:14.912" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230831 11:16:14.912" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.96 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x005AA813+48355]
+	(No symbol) [0x0053C4B1]
+	(No symbol) [0x00445358]
+	(No symbol) [0x004661AC]
+	(No symbol) [0x00461EF3]
+	(No symbol) [0x00460579]
+	(No symbol) [0x00490C55]
+	(No symbol) [0x0049093C]
+	(No symbol) [0x0048A536]
+	(No symbol) [0x004682DC]
+	(No symbol) [0x004693DD]
+	GetHandleVerifier [0x0080AABD+2539405]
+	GetHandleVerifier [0x0084A78F+2800735]
+	GetHandleVerifier [0x0084456C+2775612]
+	GetHandleVerifier [0x006351E0+616112]
+	(No symbol) [0x00545F8C]
+	(No symbol) [0x00542328]
+	(No symbol) [0x0054240B]
+	(No symbol) [0x00534FF7]
+	BaseThreadInitThunk [0x7683FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77E57A4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77E57A1E+238]
+</msg>
+<status status="FAIL" starttime="20230831 11:16:09.045" endtime="20230831 11:16:15.221"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20230831 11:16:15.221" endtime="20230831 11:16:15.222"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginUser}</arg>
+<arg>robo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230831 11:16:15.222" endtime="20230831 11:16:15.222"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginSenha}</arg>
+<arg>01sisvtiger17*</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230831 11:16:15.222" endtime="20230831 11:16:15.222"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${botaoEntrar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230831 11:16:15.222" endtime="20230831 11:16:15.222"/>
+</kw>
+<status status="FAIL" starttime="20230831 11:16:09.045" endtime="20230831 11:16:15.222"/>
+</kw>
+<kw name="Ir para documentos">
+<status status="NOT RUN" starttime="20230831 11:16:15.223" endtime="20230831 11:16:15.223"/>
+</kw>
+<kw name="Loop de filas">
+<status status="NOT RUN" starttime="20230831 11:16:15.224" endtime="20230831 11:16:15.224"/>
+</kw>
+<status status="FAIL" starttime="20230831 11:16:09.044" endtime="20230831 11:16:15.225">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 116.0.5845.96 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x005AA813+48355]
+	(No symbol) [0x0053C4B1]
+	(No symbol) [0x00445358]
+	(No symbol) [0x004661AC]
+	(No symbol) [0x00461EF3]
+	(No symbol) [0x00460579]
+	(No symbol) [0x00490C55]
+	(No symbol) [0x0049093C]
+	(No symbol) [0x0048A536]
+	(No symbol) [0x004682DC]
+	(No symbol) [0x004693DD]
+	GetHandleVerifier [0x0080AABD+2539405]
+	GetHandleVerifier [0x0084A78F+2800735]
+	GetHandleVerifier [0x0084456C+2775612]
+	GetHandleVerifier [0x006351E0+616112]
+	(No symbol) [0x00545F8C]
+	(No symbol) [0x00542328]
+	(No symbol) [0x0054240B]
+	(No symbol) [0x00534FF7]
+	BaseThreadInitThunk [0x7683FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77E57A4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77E57A1E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20230831 11:16:06.587" endtime="20230831 11:16:15.231"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="filawFTeste">filawFTeste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

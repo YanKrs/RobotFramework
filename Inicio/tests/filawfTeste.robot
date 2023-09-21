@@ -21,8 +21,8 @@ ${loginSenha}                   //*[@id="password"]
 ${dropDown}                                            //*[@id="s2id_customFilter"]
 ${selecionarTodos}                                     //*[@id="listViewEntriesMainCheckBox"]
 ${campoFila}                                           //div[@class='select2-search']/input[@type='text']
-${loop_infinito}    ${True}
-
+${loop_infinito}                                       ${True}
+${validarLogado}                                       //*[@id="AnaliseDocumentos_sideBar_link_LBL_RECORDS_LIST"]
 
 
         
