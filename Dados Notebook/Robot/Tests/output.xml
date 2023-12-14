@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20231029 19:56:53.556" rpa="false" schemaversion="4">
+<suite id="s1" name="Filaswf" source="C:\Users\yankr\Documents\Techmail\Python-Estudo\Robot\Tests\filaswf.robot">
+<test id="s1-t1" name="Cenário 1: Abrir plataforma WF, logar e checar filas" line="68">
+<kw name="Abrir site e logar">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${linkWf}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231029 19:56:54.211" level="INFO">Opening browser 'chrome' to base url 'https://wfdocumentos.techmail.com.br/'.</msg>
+<status status="PASS" starttime="20231029 19:56:54.211" endtime="20231029 19:58:17.057"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231029 19:58:17.059" endtime="20231029 19:58:17.201"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginUser}</arg>
+<arg>robo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 19:58:17.203" level="INFO">Typing text 'robo' into text field '//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20231029 19:58:17.201" endtime="20231029 19:58:17.381"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginSenha}</arg>
+<arg>01sisvtiger17*</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231029 19:58:17.382" level="INFO">Typing text '01sisvtiger17*' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20231029 19:58:17.381" endtime="20231029 19:58:17.508"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${botaoEntrar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231029 19:58:17.510" level="INFO">Clicking button '//*[@id="forgotPassword"]/button'.</msg>
+<errors>
+<msg timestamp="20231029 19:58:49.792" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>

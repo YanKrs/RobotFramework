@@ -1,0 +1,19 @@
+Use a IDLE para programar
+
+É possível criar scripts e depois dar f5 para chamar na página principal
+
+
+O Python permite que você atribua valores a várias variáveis ​​em uma linha:
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+
+
+
+
+Meu navegador está fechando sozinho quando executado, sem que eu realize o comando "close browser" 
+
+Voces utilizam Xpath para captura dos elementos na tela?
+
+Qual a pasta que é utilizada para armazenar os arquivos de validação?
