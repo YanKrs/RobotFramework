@@ -9,6 +9,8 @@ Library     SeleniumLibrary
 ${browser}              edge
 ${url}                  https://cct.techmail.com.br/login
 ${linkExportar}         https://cct.techmail.com.br/exportacao
+${FilaConsulta}         https://cct.techmail.com.br/exportacao
+${FilaResgate}          https://cct.techmail.com.br/exportacao/operacoes
 ${usuario}              yan.souza
 ${senha}                180921M@
 
@@ -17,27 +19,24 @@ ${senha}                180921M@
 ${loginUsuario}         //input[@id="input-login"]
 ${loginSenha}           //input[@id="input-senha"]
 ${entrar}               //input[@type="submit"]
-${documentos}           //a[@style="padding-right: 23px;"]
-${roboConsulta}         (//a[@href="javascript:void(0)"])[2]
-${exportar}             //a[@href="https://cct.techmail.com.br/exportacao"]
+${LoopInfinito}        ${True}
 
 
 
 **Keywords**
 Abrir navegador e logar
+    WHILE    ${LoopInfinito}        
+    
         Open browser                ${url}                         ${browser}
         Maximize Browser Window
         Input Text                  ${loginUsuario}                ${usuario}
         Input Text                  ${loginSenha}                  ${senha}
         Click Element               ${entrar}
-        Mouse Down On Link          ${documentos}
-        Mouse Down On Link          ${roboConsulta}  
-        Mouse Down On Link          ${roboConsulta}
-        Click Element               ${exportar}
-
+        Go To                       ${FilaConsulta}
         Sleep        5s
+        Go To                       ${FilaResgate}
 
-
+    END
 
 
 

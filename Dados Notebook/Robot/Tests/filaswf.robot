@@ -4,10 +4,16 @@ Library        SeleniumLibrary
 
 * Variables *
 
-${linkWf}                        https://wfdocumentos.techmail.com.br/
-${linkDocumentos}                https://wfdocumentos.techmail.com.br/index.php?module=AnaliseDocumentos&view=List
-${browser}                       chrome
-${botaoEntrar}                   //*[@id="forgotPassword"]/button
+${linkWf}                                    https://wfdocumentos.techmail.com.br/
+${linkDocumentos}                            https://wfdocumentos.techmail.com.br/index.php?module=AnaliseDocumentos&view=List
+${browser}                                   chrome
+${botaoEntrar}                               //*[@id="forgotPassword"]/button
+${linkPendenteEnvVigencia}                   https://wfdocumentos.techmail.com.br/index.php?module=AnaliseDocumentos&parent=&page=1&view=List&viewname=76
+${linkPendenteERetornVigencia}               https://wfdocumentos.techmail.com.br/index.php?module=AnaliseDocumentos&parent=&page=1&view=List&viewname=77
+${linkPendenteEnvInfo}                       https://wfdocumentos.techmail.com.br/index.php?module=AnaliseDocumentos&parent=&page=1&view=List&viewname=79
+${linkPendenteEnvRecusa}                     https://wfdocumentos.techmail.com.br/index.php?module=AnaliseDocumentos&parent=&page=1&view=List&viewname=72
+
+
 
 
 #Login
@@ -18,7 +24,7 @@ ${loginSenha}                   //*[@id="password"]
 
 #Elementos
 
-${dropDown}                                            //*[@id="s2id_customFilter"]
+${dropDown}                                            //*[@id="rightPanel"]/div[2]/div[1]/div/span[2]/span
 ${selecionarTodos}                                     //*[@id="listViewEntriesMainCheckBox"]
 ${campoFila}                                           //*[@id="s2id_customFilter"]/a
 ${loop_infinito}    ${True}
@@ -43,25 +49,19 @@ Ir para documentos
 
 
 Loop de filas
-    WHILE    ${loop_infinito}    #WHILE para fazer com que repetição seja infinita sem fechar o browser
-        @{filas}    Create List    01    02    04    16.1    16.2    22  #crio lista das filas
-        @{checar}    Create List    
+        
+        WHILE    ${loop_infinito}    #WHILE para fazer com que repetição seja infinita sem fechar o browser
+        @{filas}    Create List    ${linkPendenteEnvVigencia}      ${linkPendenteERetornVigencia}      ${linkPendenteEnvInfo}  #crio lista das filas   
         FOR    ${fila}    IN    @{filas}         #FOR para percorrer a lista das filas
 
             Wait Until Element Is Visible       ${dropDown}     20            
-            Click Element    ${dropDown}
-            Wait Until Element Is Visible    ${campoFila}
-            Input Text    ${campoFila}        ${fila}     #Insere número da fila         
-            Press Keys    ${campoFila}    \\13    #Dá enter para ir para fila        
+            Go To    ${fila}     
             Wait Until Element Is Visible    ${selecionarTodos}
             Click Element    ${selecionarTodos}        #Seleciona todos os itens pendentes da fila
             Sleep    10s        
             
         END
     END
-
-
-
 
 
 *Test Cases *
