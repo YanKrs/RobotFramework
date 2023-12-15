@@ -6,7 +6,7 @@ Library     SeleniumLibrary
 
 **Variables**
 
-${browser}              edge
+${browser}              chrome
 ${url}                  https://cct.techmail.com.br/login
 ${linkExportar}         https://cct.techmail.com.br/exportacao
 ${FilaConsulta}         https://cct.techmail.com.br/exportacao
@@ -25,16 +25,17 @@ ${LoopInfinito}        ${True}
 
 **Keywords**
 Abrir navegador e logar
-    WHILE    ${LoopInfinito}        
+            
     
         Open browser                ${url}                         ${browser}
         Maximize Browser Window
         Input Text                  ${loginUsuario}                ${usuario}
         Input Text                  ${loginSenha}                  ${senha}
         Click Element               ${entrar}
-        Go To                       ${FilaConsulta}
-        Sleep        5s
-        Go To                       ${FilaResgate}
+    WHILE    ${LoopInfinito}
+            Go To                       ${FilaConsulta}
+            Sleep        3s
+            Go To                       ${FilaResgate}
 
     END
 
